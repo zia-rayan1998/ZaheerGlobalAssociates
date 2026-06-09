@@ -30,10 +30,10 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Badge variant="glass" className="mb-6">
+          {/* <Badge variant="glass" className="mb-6">
             <span className="mr-2 inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
             AI-Powered Consultancy Platform
-          </Badge>
+          </Badge> */}
         </motion.div>
 
         <motion.h1
@@ -62,7 +62,7 @@ export function Hero() {
         >
           Expert HMDA permissions, GHMC building approvals, Fire NOC, land
           surveying, plot verification, and construction consultancy — serving
-          Hyderabad with 15+ years of regulatory excellence.
+          Hyderabad with 18+ years of regulatory excellence.
         </motion.p>
 
         <motion.div
@@ -93,7 +93,7 @@ export function Hero() {
         >
           {[
             { icon: Shield, label: "98% Approval Success" },
-            { icon: Award, label: "850+ Projects Completed" },
+            { icon: Award, label: "520+ Projects Completed" },
             { icon: Clock, label: "Fast-Track Processing" },
           ].map(({ icon: Icon, label }) => (
             <div
@@ -107,7 +107,6 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
     </section>
   );
 }
