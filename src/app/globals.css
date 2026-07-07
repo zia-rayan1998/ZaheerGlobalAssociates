@@ -50,6 +50,428 @@ body {
   font-family: var(--font-inter), system-ui, sans-serif;
 }
 
+.hero-pin {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.overlay-ui {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.overlay-ui * {
+  pointer-events: auto;
+}
+
+.overlay-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem 3rem;
+  pointer-events: auto;
+}
+
+.overlay-nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--royal-300);
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--royal-100);
+  letter-spacing: 0.05em;
+}
+
+.logo-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.overlay-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.overlay-nav__links a {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.overlay-nav__links a:hover {
+  color: var(--emerald-400);
+}
+
+.hero-copy {
+  position: absolute;
+  left: 3rem;
+  bottom: 18%;
+  max-width: 560px;
+  pointer-events: auto;
+}
+
+.hero-copy__eyebrow {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--royal-200);
+  margin-bottom: 1.25rem;
+}
+
+.hero-copy__title {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: white;
+  margin-bottom: 1.25rem;
+}
+
+.hero-copy__title em {
+  font-style: italic;
+  color: var(--royal-200);
+}
+
+.hero-copy__subtitle {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(9, 3, 3, 0.72);
+  margin-bottom: 2rem;
+  max-width: 420px;
+}
+
+.hero-copy__stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(201, 169, 98, 0.2);
+}
+
+.hero-copy__stats strong {
+  display: block;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--emerald-400);
+}
+
+.hero-copy__stats span {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: transparent;
+  border: 1px solid var(--emerald-400);
+  color: var(--emerald-400);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.btn-gold:hover {
+  background: var(--emerald-400);
+  color: #051414;
+  box-shadow: 0 0 30px rgba(52, 211, 153, 0.3);
+}
+
+.btn-gold--large {
+  padding: 1rem 2.25rem;
+  font-size: 0.75rem;
+}
+
+.globe-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  pointer-events: none;
+}
+
+.globe-hint__pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--emerald-400);
+  animation: pulse-dot 2s ease infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.5);
+  }
+}
+
+.beacon-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.beacon-label__city {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 14px;
+  color: white;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.beacon-label__country {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.scroll-track {
+  position: relative;
+  z-index: 1;
+}
+
+.scroll-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 1.5rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.scroll-section__inner {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.scroll-section__index {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--emerald-500);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.scroll-section h2 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  color: var(--royal-950);
+}
+
+.scroll-section p {
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.scroll-section__projects {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--royal-700);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.scroll-section--final {
+  background: linear-gradient(135deg, #0a1628 0%, #0f2557 50%, #059669 100%);
+}
+
+.scroll-section--final h2,
+.scroll-section--final p {
+  color: white;
+}
+
+.scroll-section--final .scroll-section__projects {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.scroll-district-label,
+.transition-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 12;
+  pointer-events: none;
+}
+
+.scroll-district-label {
+  bottom: 12%;
+  max-width: 420px;
+}
+
+.hero-back-button {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 12;
+  border: 1px solid rgba(201, 169, 98, 0.55);
+  background: rgba(10, 10, 11, 0.72);
+  padding: 0.8rem 1.1rem;
+  color: #e8d5a3;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+}
+
+.hero-back-button:hover {
+  background: rgba(201, 169, 98, 0.12);
+}
+
+.selected-district-card {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 12;
+  width: min(22rem, calc(100vw - 3rem));
+  border: 1px solid rgba(201, 169, 98, 0.24);
+  background: rgba(7, 8, 10, 0.78);
+  padding: 1rem 1.1rem 1rem;
+  color: white;
+  backdrop-filter: blur(14px);
+}
+
+.selected-district-card__eyebrow {
+  display: inline-block;
+  margin-bottom: 0.45rem;
+  color: #c9a962;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.selected-district-card h3 {
+  margin-bottom: 0.45rem;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.5rem;
+  line-height: 1.1;
+}
+
+.selected-district-card p {
+  margin-bottom: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.selected-district-card__back {
+  border: 1px solid rgba(201, 169, 98, 0.55);
+  background: transparent;
+  padding: 0.7rem 0.95rem;
+  color: #e8d5a3;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.selected-district-card__back:hover {
+  background: rgba(201, 169, 98, 0.12);
+}
+
+.scroll-district-label__eyebrow {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  color: var(--emerald-400);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.scroll-district-label h2 {
+  margin-bottom: 0.75rem;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: white;
+}
+
+.scroll-district-label p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.transition-text {  
+  top: 50%;
+  color: white;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(10, 22, 40, 0.15) 0%, rgba(10, 22, 40, 0.55) 100%),
+    linear-gradient(90deg, rgba(10, 22, 40, 0.2) 0%, transparent 35%, transparent 65%, rgba(10, 22, 40, 0.2) 100%);
+  pointer-events: none;
+}
+
 .bg-gradient-mesh {
   background:
     radial-gradient(ellipse at 20% 50%, rgba(30, 64, 175, 0.4) 0%, transparent 50%),

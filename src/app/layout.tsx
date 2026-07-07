@@ -7,7 +7,6 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FloatingWhatsApp } from "@/components/shared/floating-whatsapp";
 import { AIAssistant } from "@/components/ai/ai-assistant";
-import { NewsletterPopup } from "@/components/shared/newsletter-popup";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -44,7 +43,6 @@ export default function RootLayout({
         <Footer />
         <FloatingWhatsApp />
         <AIAssistant />
-        <NewsletterPopup />
       </body>
     </html>
   );
