@@ -1,11 +1,13 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { SceneProvider } from "@/hooks/useSceneStore";
 import { HeroScene } from "@/components/hero/HeroScene";
 import { useSceneStore } from "@/hooks/useSceneStore";
 
 function HeroContent() {
   const { phase, setActiveDistrict } = useSceneStore();
+const router = useRouter();
 
   return (
     <section className="relative isolate min-h-screen overflow-hidden bg-[#0a0a0b] text-white">
@@ -33,39 +35,40 @@ function HeroContent() {
             </p>
             <div className="mt-8">
               <button
-                type="button"
-                className="inline-flex items-center gap-2 border border-[#c9a962] px-7 py-4 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#c9a962] transition-colors duration-300 hover:bg-[#c9a962] hover:text-[#0a0a0b]"
-              >
-                Enquire Now →
-              </button>
+  type="button"
+  onClick={() => router.push("/contact")}
+  className="inline-flex items-center gap-2 border border-[#c9a962] px-7 py-4 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#c9a962] transition-colors duration-300 hover:bg-[#c9a962] hover:text-[#0a0a0b]"
+>
+  Enquire Now →
+</button>
             </div>
 
             <div className="mt-10 border-t border-white/10 pt-8">
               <div className="grid grid-cols-3 gap-6 text-left sm:gap-8">
-                <div>
+                {/* <div>
                   <strong className="block font-serif text-2xl text-[#c9a962] sm:text-3xl">20+</strong>
                   <span className="mt-1 block text-[0.7rem] font-medium uppercase tracking-[0.22em] text-white/45">
                     Years Legacy
                   </span>
-                </div>
-                <div>
+                </div> */}
+                {/* <div>
                   <strong className="block font-serif text-2xl text-[#c9a962] sm:text-3xl">50+</strong>
                   <span className="mt-1 block text-[0.7rem] font-medium uppercase tracking-[0.22em] text-white/45">
                     Projects Delivered
                   </span>
-                </div>
-                <div>
+                </div> */}
+                {/* <div>
                   <strong className="block font-serif text-2xl text-[#c9a962] sm:text-3xl">12</strong>
                   <span className="mt-1 block text-[0.7rem] font-medium uppercase tracking-[0.22em] text-white/45">
                     Premium Locations
                   </span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
 
           <div className="relative flex min-h-[28rem] items-center justify-center lg:min-h-[42rem] lg:justify-end">
-            {phase === "map" && (
+            {phase === "city" && (
               <button
                 type="button"
                 className="absolute right-6 top-6 z-20 border border-[#c9a962]/55 bg-black/70 px-4 py-3 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#e8d5a3] backdrop-blur-md transition-colors duration-300 hover:bg-[#c9a962]/12"
@@ -78,7 +81,7 @@ function HeroContent() {
               </button>
             )}
 
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute -inset-20 flex items-center justify-center overflow-visible">
               <HeroScene className="h-full w-full" />
             </div>
           </div>

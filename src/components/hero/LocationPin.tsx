@@ -28,7 +28,7 @@ export function LocationPin({
     const pulse = (Math.sin(t * 2) + 1) * 0.5;
 
     if (groupRef.current) {
-      groupRef.current.position.set(district.position[0], 0.05, district.position[1]);
+      groupRef.current.position.set(district.position[0], 2, district.position[1]);
       groupRef.current.visible = scrollVisible || isHighlighted;
     }
 
@@ -68,12 +68,19 @@ export function LocationPin({
         <meshBasicMaterial color={COLORS.gold} transparent opacity={0.2} side={THREE.DoubleSide} depthWrite={false} />
       </mesh>
       {showLabel && (
-        <Html position={[0, 0.8, 0]} center distanceFactor={5}>
-        <div className="pin-label">
-          <span>{district.name}</span>
-        </div>
-        </Html>
-      )}
+  <Html
+    position={[0, 1.2, 0]}
+    center
+    distanceFactor={8}
+    occlude={false}
+  >
+    <div className="rounded-lg border border-yellow-500/40 bg-black/60 px-3 py-2 backdrop-blur-md shadow-lg">
+      <span className="text-sm font-semibold tracking-wide text-yellow-300">
+        📍 {district.name}
+      </span>
+    </div>
+  </Html>
+)}
     </group>
   );
 }

@@ -83,7 +83,7 @@ export function Earth({ onHyderabadClick }: EarthProps) {
   });
 
   return (
-    <group ref={groupRef}>
+    <group ref={groupRef} scale={0.85}>
       <mesh
         onPointerOver={() => setGlobeCursor("grab")}
         onPointerOut={() => setGlobeCursor("default")}

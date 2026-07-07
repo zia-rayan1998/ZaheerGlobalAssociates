@@ -73,7 +73,7 @@ export function CameraController({ onTransitionComplete }: CameraControllerProps
           mapOpacity.current = Math.min(1, Math.max(0, (progress - 0.5) * 2));
         },
         onComplete: () => {
-          setPhase("map");
+          setPhase("city");
           setControlsEnabled(true);
           transitioning.current = false;
           globeOpacity.current = 0;
@@ -85,7 +85,7 @@ export function CameraController({ onTransitionComplete }: CameraControllerProps
     };
 
     reverseTransitionFn.current = () => {
-      if (phase !== "map" || transitioning.current) return;
+      if (phase !== "city" || transitioning.current) return;
       transitioning.current = true;
       setPhase("transitioning");
       setControlsEnabled(false);
@@ -138,7 +138,7 @@ export function CameraController({ onTransitionComplete }: CameraControllerProps
       camera.position.y = CAMERA.globe.position[1] + currentParallax.current.y * 0.15;
     }
 
-    if (phase === "map") {
+    if (phase === "city") {
       const total = scrollWaypoints.length - 1;
       const scaled = scrollProgress * total;
       const index = Math.min(Math.floor(scaled), total - 1);
@@ -168,15 +168,15 @@ export function CameraController({ onTransitionComplete }: CameraControllerProps
   return (
     <OrbitControls
       enabled={controlsEnabled}
-      enablePan={phase === "map"}
-      enableZoom={false}
+      enablePan={phase === "city"}
+      enableZoom={true}
       enableRotate
-      minDistance={phase === "globe" ? EARTH.minDistance : 6}
-      maxDistance={phase === "globe" ? EARTH.maxDistance : 35}
-      minPolarAngle={phase === "map" ? 0.2 : 0}
-      maxPolarAngle={phase === "map" ? Math.PI / 2.2 : Math.PI}
+      minDistance={phase === "globe" ? EARTH.minDistance : 8}
+      maxDistance={phase === "globe" ? EARTH.maxDistance : 45}
+      minPolarAngle={phase === "city" ? 0.2 : 0}
+      maxPolarAngle={phase === "city" ? Math.PI / 2.2 : Math.PI}
       rotateSpeed={phase === "globe" ? 0.22 : 0.45}
-      zoomSpeed={0.6}
+      zoomSpeed={1.2}
       dampingFactor={0.08}
       enableDamping
     />

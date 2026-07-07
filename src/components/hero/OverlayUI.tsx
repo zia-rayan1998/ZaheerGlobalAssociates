@@ -7,7 +7,7 @@ export function OverlayUI() {
   const selectedDistrict = districts.find((district) => district.id === activeDistrict) ?? null;
 
   const scrollIndex = Math.min(Math.floor(scrollProgress * districts.length), districts.length - 1);
-  const scrollDistrict = phase === "map" ? districts[scrollIndex] : null;
+  const scrollDistrict = phase === "city" ? districts[scrollIndex] : null;
 
   return (
     <div className="overlay-ui">
@@ -64,7 +64,7 @@ export function OverlayUI() {
         </div>
       )}
 
-      {phase === "map" && scrollDistrict && (
+      {phase === "city" && scrollDistrict && (
         <div className="scroll-district-label">
           <span className="scroll-district-label__eyebrow">Now Viewing</span>
           <h2>{scrollDistrict.name}</h2>
@@ -72,7 +72,7 @@ export function OverlayUI() {
         </div>
       )}
 
-      {phase === "map" && selectedDistrict && (
+      {phase === "city" && selectedDistrict && (
         <div className="selected-district-card">
           <span className="selected-district-card__eyebrow">Selected Location</span>
           <h3>{selectedDistrict.name}</h3>
@@ -90,7 +90,7 @@ export function OverlayUI() {
         </div>
       )}
 
-      {phase === "map" && (
+      {phase === "city" && (
         <button
           type="button"
           className="hero-back-button"

@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, type ReactNode } from "react";
 
-export type ScenePhase = "globe" | "transitioning" | "map";
+export type ScenePhase = "globe" | "transitioning" | "city";
 
 interface SceneContextValue {
   phase: ScenePhase;

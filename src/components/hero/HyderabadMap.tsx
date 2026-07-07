@@ -101,12 +101,12 @@ export function HyderabadMap({ scrollProgress }: HyderabadMapProps) {
   useFrame(() => {
     const opacity = mapOpacity.current;
     if (groupRef.current) {
-      groupRef.current.visible = opacity > 0.01 || phase === "map";
+      groupRef.current.visible = opacity > 0.01 || phase === "city";
     }
   });
 
   return (
-    <group ref={groupRef} visible={false}>
+    <group ref={groupRef} visible={false} scale={0.50}>
       <Roads />
       <Buildings />
 
@@ -115,8 +115,8 @@ export function HyderabadMap({ scrollProgress }: HyderabadMapProps) {
           key={district.id}
           district={district}
           isHighlighted={i === activeIndex || i === activeIndex + 1}
-          scrollVisible={phase === "map"}
-          showLabel={activeDistrict === district.id}
+          scrollVisible={phase === "city"}
+          showLabel={phase === "city"}
           onSelect={setActiveDistrict}
         />
       ))}
