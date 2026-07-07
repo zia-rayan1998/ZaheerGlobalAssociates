@@ -1,10 +1,10 @@
 "use client";
-
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, MessageCircle, Building2 } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn, WHATSAPP_URL, COMPANY } from "@/lib/utils";
 
@@ -42,27 +42,51 @@ export function Navbar() {
     >
       <nav className="container mx-auto flex h-18 items-center justify-between px-4 py-3">
         <Link href="/" className="group flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-royal-600 shadow-lg shadow-royal-600/30 transition-transform group-hover:scale-105">
-            <Building2 className="h-6 w-6 text-white" />
-          </div>
-          <div className="hidden sm:block">
-            <p
-              className={cn(
-                "text-sm font-bold leading-tight transition-colors",
-                scrolled ? "text-royal-900" : "text-white"
-              )}
-            >
-              Zaheer Global
-            </p>
-            <p
-              className={cn(
-                "text-xs transition-colors",
-                scrolled ? "text-slate-500" : "text-white/70"
-              )}
-            >
-              Associates
-            </p>
-          </div>
+          <Image
+  src="/navbar-logo.png"
+  alt="Zaheer Global Associates"
+  width={220}
+  height={80}
+  priority
+  className="h-14 w-auto object-contain"
+/>
+
+  <div className="hidden sm:block leading-none">
+  <h2
+    className="
+      text-xl
+      font-bold
+      tracking-[0.12em]
+      text-[#D4AF39]
+      transition-all
+      duration-300
+    "
+    style={{
+      fontFamily: "var(--font-display)",
+      textShadow: "0 0 10px rgba(226, 178, 21, 0.15)",
+    }}
+  >
+    ZAHEER
+  </h2>
+
+  <p
+    className="
+      mt-1
+      text-[11px]
+      uppercase
+      tracking-[0.35em]
+      text-white/75
+      transition-all
+      duration-300
+    "
+    style={{
+      fontFamily: "var(--font-display)",
+      textShadow: "0 0 10px rgba(238, 186, 14, 0.15)",
+    }}
+  >
+    Global Associates
+  </p>
+</div>
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">

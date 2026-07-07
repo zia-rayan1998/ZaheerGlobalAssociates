@@ -28,7 +28,7 @@ const router = useRouter();
             <h1 className="text-4xl font-normal leading-[0.98] tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-[3.2rem]">
               From Land Evaluation to Government
 Approvals, All under one roof.
-              <span className="block italic text-[#ead7a2]">GHMC,
+              <span className="block bold text-[#ead7a2]">GHMC,
 HMDA & DTCP
 Approvals.</span>
             </h1>

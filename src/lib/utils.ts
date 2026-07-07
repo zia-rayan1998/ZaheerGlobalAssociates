@@ -17,5 +17,5 @@ export const COMPANY = {
   phone: "+91 9704045937",
   address: "King Colony, Shahstipuram, Hyderabad , India.",
   mapsEmbed:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d487107.5615032347!2d78.267614!3d17.387140!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b7838b436a9!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.4091613580813!2d78.45194857493313!3d17.32187748355423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbbd590b8ac30b%3A0xaa5d4922d8b9a2c6!2sMaster%20Minds%20High%20School!5e1!3m2!1sen!2sin!4v1783462420570!5m2!1sen!2sin",
 } as const;
