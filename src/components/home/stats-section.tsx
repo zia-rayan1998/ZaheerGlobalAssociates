@@ -8,7 +8,7 @@ export function StatsSection() {
   return (
     <section className="relative -mt-16 z-20 pb-20">
       <div className="container mx-auto px-4">
-        <div className="rounded-3xl border border-white/50 bg-white p-8 shadow-2xl shadow-royal-900/10 sm:p-12">
+        <div className="rounded-3xl border border-white/50 bg-blue p-8 shadow-2xl shadow-royal-900/10 sm:p-12">
           <SectionHeading
             badge="Our Track Record"
             title="Numbers That Speak for Themselves"

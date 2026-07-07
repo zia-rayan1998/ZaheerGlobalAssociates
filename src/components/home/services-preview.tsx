@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 
 export function ServicesPreview() {
   return (
-    <section className="py-24 bg-slate-50/50">
+    <section className="py-24 bg-[#05070A]">
       <div className="container mx-auto px-4">
         <SectionHeading
           badge="Our Services"
@@ -26,13 +26,13 @@ export function ServicesPreview() {
               <TiltCard key={service.id}>
                 <motion.div
                   whileHover={{ y: -4 }}
-                  className="group h-full rounded-2xl border border-white/60 bg-white p-6 shadow-lg shadow-royal-900/5 transition-shadow hover:shadow-xl hover:shadow-royal-900/10"
+                  className="group h-full rounded-2xl border border-[#D4AF37]/20 bg-[#0B1118] p-6 transition-all duration-300 hover:border-[#D4AF37]/50 hover:shadow-[0_0_30px_rgba(212,175,55,0.12)]"
                 >
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-royal-500 to-royal-700 text-white shadow-lg shadow-royal-600/30 transition-transform group-hover:scale-110">
                     <Icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-royal-900">{service.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600 line-clamp-3">
+                  <h3 className="text-lg font-bold text-[#F5E6B3]">{service.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[#F5E6B3] line-clamp-3">
                     {service.shortDescription}
                   </p>
                   <Link
