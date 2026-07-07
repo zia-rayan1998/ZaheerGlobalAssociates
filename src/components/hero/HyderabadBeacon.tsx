@@ -107,7 +107,7 @@ export function HyderabadBeacon({ onClick }: HyderabadBeaconProps) {
       <Html position={[0, 0.12, 0]} center distanceFactor={4} style={{ pointerEvents: "none" }}>
         <div className="beacon-label" ref={labelRef}>
           <span className="beacon-label__city">Hyderabad</span>
-          <span className="beacon-label__country">India</span>
+          <span className="beacon-label__country">click</span>
         </div>
       </Html>
     </group>

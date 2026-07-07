@@ -168,14 +168,14 @@ export function CameraController({ onTransitionComplete }: CameraControllerProps
   return (
     <OrbitControls
       enabled={controlsEnabled}
-      enablePan={phase === "city"}
+      enablePan
       enableZoom={true}
       enableRotate
       minDistance={phase === "globe" ? EARTH.minDistance : 8}
       maxDistance={phase === "globe" ? EARTH.maxDistance : 45}
       minPolarAngle={phase === "city" ? 0.2 : 0}
       maxPolarAngle={phase === "city" ? Math.PI / 2.2 : Math.PI}
-      rotateSpeed={phase === "globe" ? 0.22 : 0.45}
+      rotateSpeed={1.1}
       zoomSpeed={1.2}
       dampingFactor={0.08}
       enableDamping

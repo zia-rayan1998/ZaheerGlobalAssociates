@@ -23,15 +23,19 @@ const router = useRouter();
         <div className="grid w-full items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-6">
           <div className="max-w-xl">
             <p className="mb-5 text-[0.7rem] font-semibold uppercase tracking-[0.34em] text-[#c9a962]">
-              Luxury Real Estate • Hyderabad
+              TRUSTED LAND & PERMISSION CONSULTANTS • Hyderabad
             </p>
-            <h1 className="text-4xl font-normal leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
-              Building Legacies,
-              <span className="block italic text-[#ead7a2]">Crafting Lifestyles</span>
+            <h1 className="text-4xl font-normal leading-[0.98] tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-[3.2rem]">
+              From Land Evaluation to Government
+Approvals, All under one roof.
+              <span className="block italic text-[#ead7a2]">GHMC,
+HMDA & DTCP
+Approvals.</span>
             </h1>
             <p className="mt-6 max-w-lg text-base leading-8 text-white/70 sm:text-lg">
-              Discover premium properties across Hyderabad&apos;s most prestigious districts.
-              Click the golden beacon to explore.
+              Professional surveying, land assessments, government approvals,
+planning support and technical consultancy for residential,
+commercial and infrastructure projects.
             </p>
             <div className="mt-8">
               <button
